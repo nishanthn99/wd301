@@ -1,0 +1,8 @@
+.task-card{
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    border: 1px solid rgb(215, 176, 176);
+    padding: 6px 8px;
+    margin: 6px;    
+}

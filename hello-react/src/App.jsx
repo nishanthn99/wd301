@@ -1,34 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import TaskCard from "./TaskCard"
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <h1 className="font-bold justify-center flex text-2xl">Pending</h1>
+    <TaskCard title={"Build the website with static content"}dueDate={"Due On:12/04/2024"}assigneeName={"Nishanth"}/>
+    <TaskCard title={"Build the website with dynamic content"}dueDate={"Due On:06/04/2024"}assigneeName={"Nishanth S"}/>
+    <h1 className="font-bold justify-center flex text-2xl">Done</h1>
+    <TaskCard title={"Build the website with  content"} completedAtDate={"completed on:01/04/2024"} assigneeName={"Nishanth A"}/>
+    <TaskCard title={"Build the website with unknown content"}completedAtDate={"completed on:01/04/2024"}assigneeName={"Nishanth B"}/>
+     </> 
   )
 }
 
