@@ -27,7 +27,7 @@ const TaskCard = ({title,dueDate,assigneeName,completedAtDate}) => {
       <h2 className="text-xl font-bold">{pending.title}</h2>
       <p>{pending.dueDate}</p>
       <p>{pending.completedAtDate}</p>
-      <p>assigneeName:{pending.assigneeName}</p>
+      <p>Assignee:{pending.assigneeName}</p>
 
     </div>
   )
