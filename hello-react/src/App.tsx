@@ -1,5 +1,16 @@
-import TaskCard from "./TaskCard"
+import TaskCard from "./TaskCard.tsx"
 function App() {
+  // The props dueDate, completedAtDate and assigneeName that are passed 
+  // from the App component and to the TaskCard component should 
+  // be defined through a TypeScript interface.
+
+  interface List{
+    title: string,
+    dueDate:string,
+    assigneeName:string,
+    completedAtDate:string
+  }
+  
   return (
     <>
     <h1 className="font-bold justify-center flex text-2xl">Pending</h1>
