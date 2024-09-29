@@ -43,9 +43,9 @@ constructor(props: TaskFormProps) {
   render(){
     return (
       <div> <form onSubmit={this.addTask}>
-      <input className="flex p-2 border-emerald-400 border my-2 rounded-md w-2/3" id="todoTitle" type="text" value={this.state.title} onChange={this.titleChanged}/>
-      <input className="flex p-2 border-emerald-400 border my-2 rounded-md w-1/2" id="todoDueDate" type="date" value={this.state.todoDueDate} onChange={this.todoDueDateChanged}/>
-      <input className="flex p-2 border-emerald-400 border my-2 rounded-md w-full" id="todoDescription" type="text" value={this.state.todoDescription} onChange={this.todoDescriptionChanged}/>
+      <input className="flex p-2 border-emerald-400 border my-2 rounded-md w-2/3" id="todoTitle" type="text" value={this.state.title} onChange={this.titleChanged} required/>
+      <input className="flex p-2 border-emerald-400 border my-2 rounded-md w-1/2" id="todoDueDate" type="date" value={this.state.todoDueDate} onChange={this.todoDueDateChanged} required/>
+      <input className="flex p-2 border-emerald-400 border my-2 rounded-md w-full" id="todoDescription" type="text" value={this.state.todoDescription} onChange={this.todoDescriptionChanged} required/>
         <button className="px-2 border-emerald-400 border my-2 rounded bg-green-500 hover:bg-green-600 justify-center" id="addTaskButton" type="submit">Add item</button>
     </form></div>
     )
