@@ -8,9 +8,20 @@ interface Props {
 const TaskList=(props:Props)=>{
     return(
         <div>
-        {props.tasks.map((task,index)=>(
-            <Task key={index} title={task.title} description={task.todoDescription} todoDueDate={task.todoDueDate} />
-        ))}
+        <ul>
+      {props.tasks.length > 0 ? (
+        props.tasks.map((task,idx) => (
+          <Task
+            key={idx}
+            title={task.title}
+            todoDescription={task.todoDescription}
+            todoDueDate={task.todoDueDate}
+          />
+        ))
+      ) : (
+        <p>No tasks available.</p>
+      )}
+    </ul>
     </div> 
     )
 }

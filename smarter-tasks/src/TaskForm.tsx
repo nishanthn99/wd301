@@ -4,6 +4,7 @@ interface TaskFormProps {
     addTask: (task: TaskItem) => void;
 }
 interface TaskFormState {
+    id:number
     title:string,
     todoDueDate:string,
     todoDescription:string
@@ -11,6 +12,7 @@ interface TaskFormState {
 
 const TaskForm=(props:TaskFormProps)=>{
   const [formState,setFormState]=React.useState<TaskFormState>({
+    id:1,
     title:"",
     todoDueDate:"",
     todoDescription:""
@@ -29,7 +31,7 @@ const TaskForm=(props:TaskFormProps)=>{
     event.preventDefault();
     console.log(`Doc is submitted with ${formState}`);
     props.addTask(formState);
-    setFormState({title:"",todoDueDate:"",todoDescription:""});
+    setFormState({id:formState.id+1,title:"",todoDueDate:"",todoDescription:""});
   }
   return(
     <div> <form onSubmit={addTask}>

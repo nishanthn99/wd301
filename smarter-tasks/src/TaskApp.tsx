@@ -1,4 +1,3 @@
-import React from "react";
 import { TaskItem } from "./types";
 import TaskList from "./TaskList";
 import TaskForm from "./TaskForm";
@@ -14,15 +13,6 @@ const TaskApp=()=>{
   const addTask=(task:TaskItem)=>{
     setTaskAppState({tasks:[...taskAppState.tasks,task]})
   }
-  React.useEffect(() => {
-    const id = setTimeout(() => {
-      console.log(`Saved ${taskAppState.tasks.length} items to backend...`);
-    }, 5000);
-    return () => {
-      console.log("clear or cancel any existing network call");
-      clearTimeout(id);
-    };
-  }, [taskAppState.tasks]);
   return(
     <div className="container py-10 max-w-4xl mx-auto">
         <h1 className="text-3xl mb-2 font-bold text-slate-700">
