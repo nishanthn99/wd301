@@ -2,6 +2,7 @@ import { TaskItem } from "./types";
 import TaskList from "./TaskList";
 import TaskForm from "./TaskForm";
 import { useLocalStorage } from "./hooks/useLocalStorage";
+
 interface TaskAppState {
   tasks: TaskItem[];
 }
@@ -10,9 +11,14 @@ const TaskApp=()=>{
   const [taskAppState, setTaskAppState] = useLocalStorage<TaskAppState>("tasks", {
     tasks: [],
   });
+
   const addTask=(task:TaskItem)=>{
     setTaskAppState({tasks:[...taskAppState.tasks,task]})
   }
+  const deleteTask = (taskId: number) => {
+    const updatedTasks = taskAppState.tasks.filter((task) => task.id !== taskId);
+    setTaskAppState({ tasks: updatedTasks });
+  };
   return(
     <div className="container py-10 max-w-4xl mx-auto">
         <h1 className="text-3xl mb-2 font-bold text-slate-700">
@@ -29,12 +35,11 @@ const TaskApp=()=>{
             </h1>
             
             <TaskForm addTask={addTask} />
-            <TaskList tasks={taskAppState.tasks} />
+            <TaskList tasks={taskAppState.tasks} deleteTask={deleteTask} />
           </div>
         </div>
-        </div>
-  )
-}
-
+      </div>
+    );
+  }
 
 export default TaskApp;
