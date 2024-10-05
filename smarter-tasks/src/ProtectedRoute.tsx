@@ -5,6 +5,6 @@ export default function ProtectedRoute({ children }: { children: JSX.Element }) 
   if (authenticated === 'true') {
     return <>{children}</>;
   } else {
-    return <Navigate to="/notfound" />;
+    return <Navigate to="/signin" />;
  }
 }

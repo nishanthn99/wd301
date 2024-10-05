@@ -10,10 +10,10 @@ interface TaskProp {
 const Task = (props: TaskProp) => {
   return (<div className="TaskItem shadow-md border border-slate-100">
     <a href={`/tasks/${props.id || ""}`}>
-            <h2 className="text-base font-bold my-1">{props.title}</h2>
+            <h3 className="text-base font-bold my-1">{props.title}</h3>
           </a>
     <h3 className="text-base font-bold my-1">{props.todoDueDate}</h3>
-    <p className="text-sm text-slate-500">
+    <p className="text-slate-700">
       {props.description}
     </p>
     <button

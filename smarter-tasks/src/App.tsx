@@ -20,12 +20,12 @@ function App() {
       element: <Signin />
     },
     {
-      path: "/notfound",
-      element: <Notfound />
+      path: "*",
+      element: <Navigate to="/notfound" replace />,
     },
     {
       element: (
-        <ProtectedRoute><Layout /></ProtectedRoute>),
+        <ProtectedRoute><Layout/></ProtectedRoute>),
       children: [
         {
           path: "/home",
@@ -39,6 +39,10 @@ function App() {
           path: "tasks/:id",
           element: (<TaskDetailsPage />)
         },
+        {
+          path: "/notfound",
+          element: <Notfound />
+        }
       ]
     },
   ]);
