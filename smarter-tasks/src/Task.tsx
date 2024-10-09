@@ -11,7 +11,7 @@ const Task = (props: TaskProp) => {
   return (<div className="TaskItem shadow-md border border-slate-100">
     <div className="flex">
           <a href={`/tasks/${props.id}`}>
-            <h3 className=" font-bold my-1">{props.title}</h3>
+            <h3 className="text-base font-bold my-1">{props.title}</h3>
           </a>
         </div>
     <h3 className="text-base font-bold my-1">{props.todoDueDate}</h3>
