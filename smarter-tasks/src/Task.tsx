@@ -14,7 +14,7 @@ const Task = (props: TaskProp) => {
             <h3 className="text-base font-bold my-1">{props.title}</h3>
           </a>
         </div>
-    <h3 className="text-base font-bold my-1">{props.todoDueDate}</h3>
+    <h3 className="font-bold my-1">{props.todoDueDate}</h3>
     <p className="text-slate-700">
       {props.description}
     </p>
