@@ -4,7 +4,7 @@ import { Notfound } from './pages/Notfound';
 
 import Signup from './pages/signup';
 import Signin from './pages/signin';
-import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/dashboard';
 
 
 function App() {
