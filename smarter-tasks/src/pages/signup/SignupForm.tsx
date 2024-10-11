@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { API_ENDPOINT } from '../../config/constants';
+import {  useNavigate } from 'react-router-dom';
 
 const SignupForm: React.FC = () => {
+  const navigate=useNavigate();
   const [organisationName, setOrganisationName] = useState('');
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
@@ -9,7 +11,6 @@ const SignupForm: React.FC = () => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
     try {
       const response = await fetch(`${API_ENDPOINT}/organisations`, {
         method: 'POST',
@@ -26,6 +27,7 @@ const SignupForm: React.FC = () => {
       localStorage.setItem('authToken', data.token);
       console.log('Sign-up successful');
       // Dialogue: After successful signup we have to redirect the user to the secured page. We will do that later.
+      navigate('/dashboard')
     } catch (error) {
       console.error('Sign-up failed:', error);
     }
