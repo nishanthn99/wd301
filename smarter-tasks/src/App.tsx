@@ -1,23 +1,31 @@
 import './App.css'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
-import HomePage from './pages/HomePage';
+
 import TaskListPage from './pages/TaskListPage';
 import Layout from './Layout';
 import TaskDetailsPage from './pages/TaskDetailsPage';
-import Signin from './pages/Signin';
+
 import ProtectedRoute from './ProtectedRoute';
 import { Notfound } from './pages/Notfound';
+import Form from './Form';
+import HomePage from './pages/HomePage';
+import Signup from './pages/signup';
+import Signin from './pages/signin';
 
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Navigate to='/signin' replace />
+      element: <Navigate to='/signup' replace />
     },
     {
-      path: '/signin',
-      element: <Signin />
+      path: '/signup',
+      element: <Signup />
+    },
+    {
+      path:'/signin',
+      element:<Signin/>
     },
     {
       path: "*",
@@ -29,11 +37,15 @@ function App() {
       children: [
         {
           path: "/home",
-          element: <HomePage />
+          element: <><HomePage/></>
         },
         {
           path: "/tasks",
           element: <TaskListPage />
+        },
+        {
+          path:'/form',
+          element: <Form/>
         },
         {
           path: "/tasks/:id",
