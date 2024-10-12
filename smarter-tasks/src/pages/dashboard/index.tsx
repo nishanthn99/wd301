@@ -6,7 +6,7 @@ const Dashboard : React.FC=()=>{
 
     const handleLogout=()=>{
         localStorage.removeItem('userData');
-        navigate('/');
+        navigate('/signin');
     }
 
     return (
